@@ -13,10 +13,9 @@ export function copyAndPush(array, numbers) {
 // create a function that takes an array of strings capitalize all strings and filter out any string that starts with the letter F/f.
 
 export function capitalizeAndFilter(stringArray) {
-  return stringArray.filter((item) => item[0].toLowerCase() !== 'f').map((item) => {
-    return item.toUpperCase;
-  });
-}
+  return stringArray.filter(item => item[0] !== 'f' && item[0] !== 'F').map(item => item.toUpperCase());
+  
+} 
 
 // Use the Futurama Quote API http://futuramaapi.herokuapp.com to return a single quote with the format:
 // fetchQuotes();
