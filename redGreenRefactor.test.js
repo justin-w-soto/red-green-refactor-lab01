@@ -1,4 +1,4 @@
-import { copyAndPush, getName } from './redGreenRefactor.js';
+import { copyAndPush, getName, capitalizeAndFilter } from './redGreenRefactor.js';
 
 // test for getName function
 describe('getName', () => {
@@ -27,11 +27,14 @@ describe('getName', () => {
   });
 
   // test for capitalizeAndFilter function
-  // describe('capitalizeAndFilter', () => {
-  //   it('should take an array of strings capitalize all strings and filter out any string that starts with the letter F/f.', () => {
-  //     expect();
-  //   });
-  // });
+  describe('capitalizeAndFilter', () => {
+    it('should take an array of strings capitalize all strings and filter out any string that starts with the letter F/f.', () => {
+      const stringArray = ['this', 'is', 'my', 'first', 'array', 'not', 'Fantastic', 'but', 'fine'];
+      const expectedArray = ['THIS', 'IS', 'MY', 'ARRAY', 'NOT', 'BUT'];
+      const actualArray = capitalizeAndFilter(stringArray);
+      expect(actualArray).toEqual(expectedArray);
+    });
+  });
 
   // test for fetchQUotes function
   // describe('fetchQuotes', () => {
