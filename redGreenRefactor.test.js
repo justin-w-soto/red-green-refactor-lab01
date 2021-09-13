@@ -18,13 +18,11 @@ describe('getName', () => {
   });
 
   // test for copyAndPush function
-  const numbers = [1, 2, 3];
-
   describe('copyAndPush', () => {
     it('should return a new array with all the items in the original array and a new item pushed to the end.', () => {
-      const expectedArray = [1, 2, 3, 4];
-      const acutalArray = copyAndPush(numbers, 4);
-      expect(acutalArray).toEqual(expectedArray);
+      const numbers = [1, 2, 3];
+      const arrayCopy = copyAndPush(numbers, 4);
+      expect(arrayCopy).toEqual([1, 2, 3, 4]);
     });
   });
 
