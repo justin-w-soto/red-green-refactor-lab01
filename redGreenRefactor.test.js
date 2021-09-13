@@ -1,4 +1,4 @@
-import { getName } from './redGreenRefactor.js';
+import { copyAndPush, getName } from './redGreenRefactor.js';
 
 // test for getName function
 describe('getName', () => {
@@ -15,15 +15,18 @@ describe('getName', () => {
     const expectedName = 'Aang';
     const actualName = getName(character);
     expect(actualName).toEqual(expectedName);
-  
   });
 
   // test for copyAndPush function
-  // describe('copyAndPush', () => {
-  //   it('should return a new array with all the items in the original array and a new item pushed to the end.', () => {
-  //     expect();
-  //   });
-  // });
+  const numbers = [1, 2, 3];
+
+  describe('copyAndPush', () => {
+    it('should return a new array with all the items in the original array and a new item pushed to the end.', () => {
+      const expectedArray = [1, 2, 3, 4];
+      const acutalArray = copyAndPush(numbers, 4);
+      expect(acutalArray).toEqual(expectedArray);
+    });
+  });
 
   // test for capitalizeAndFilter function
   // describe('capitalizeAndFilter', () => {

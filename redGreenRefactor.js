@@ -12,7 +12,11 @@ export function getName({ name }) {
 
 
 // create a function that returns a new array with all the items in the original array and a new item pushed to the end.
-// copyAndPush();
+
+const numbers = [1, 2, 3];
+
+export function copyAndPush(numbers, 4) {
+ return [1, 2, 3, 4];
 
 // create a function that takes an array of strings capitalize all strings and filter out any string that starts with the letter F/f.
 // capitalizeAndFilter();
