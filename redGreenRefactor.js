@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 // create a function that returns the name property of an object.
 
 export function getName({ name }) {
@@ -17,6 +19,12 @@ export function capitalizeAndFilter(stringArray) {
   
 } 
 
-// Use the Futurama Quote API http://futuramaapi.herokuapp.com to return a single quote with the format:
-// fetchQuotes();
 
+// Use the Futurama Quote API http://futuramaapi.herokuapp.com to return a single quote 
+
+export async function fetchQuotes() {
+  const response = await fetch('http://futuramaapi.herokuapp.com/api/quotes');
+  const apiQuote = await response.json();
+  return { name: apiQuote[0].character, text: apiQuote[0].quote, image: apiQuote[0].image };
+}
+    

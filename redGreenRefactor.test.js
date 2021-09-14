@@ -1,4 +1,4 @@
-import { copyAndPush, getName, capitalizeAndFilter } from './redGreenRefactor.js';
+import { copyAndPush, getName, capitalizeAndFilter, fetchQuotes } from './redGreenRefactor.js';
 
 // test for getName function
 describe('getName', () => {
@@ -37,10 +37,11 @@ describe('getName', () => {
   });
 
   // test for fetchQUotes function
-  // describe('fetchQuotes', () => {
-  //   it('should ', () => {
-  //     expect();
-  //   });
-  // });
+  describe('fetchQuotes', () => {
+    it('should return a single quote from the API', async () => {
+      const quoth = await fetchQuotes();
+      expect(quoth).toEqual({ name: expect.any(String), text: expect.any(String), image: expect.any(String) });
+    });
+  });
 
 });
